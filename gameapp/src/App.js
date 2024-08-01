@@ -1,12 +1,13 @@
 
-import React, {useEffect, useRef } from 'react';
+
+import React, {useEffect, useRef} from 'react';
 import Matter from "matter-js"
-import { FRUITS } from '../gameapp/src/fruits';
-import "./App.css"
+import {FRUITS} from '../gameapp/src/fruits';
+import "../gameapp/src/App.css"
 
 //suikagame logo, level logo(x)
-    //import watermelon from "./10_watermelon.png"
-    //import wmlevel from "./wmlevel.png"
+import watermelon from "../gameapp/src/10_watermelon.png"
+import wmlevel from "../gameapp/src/wmlevel.png"
 
 // Game변수지정
 export default function MatterGame (){
@@ -187,5 +188,33 @@ useEffect(() => {
 
 
 
-    
+
+
+  return (
+  <div>
+    <div className="game-title"></div>
+    <div className="game-main" ref={containerRef}>
+      <canvas ref={canvasRef}></canvas>
+
+      <div className='game-explain'>
+        <img src={wattermelon} alt="" />
+        <p>수박 게임</p>
+        
+        <div>
+          <img src={wmlevel} alt="" />
+        </div>
+
+        <div className='explain-text'>
+          <p>조작방법</p>
+          <p>좌, 우 이동 : ◀, ▶</p>
+          <p>과일놓기 : SPACE</p>
+        </div>
+
+      </div>
+    </div>
+
+</div>
+  );
 }
+
+
